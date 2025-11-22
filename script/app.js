@@ -73,12 +73,19 @@ form.addEventListener("submit", function(e) {
 
 });
 
-document.querySelector(".todo").addEventListener("click", () => {
-    document.getElementById("asideRight").style.display = "inline-block";
-    document.getElementById("todoDetails").style.display = "inline-block";
-    document.getElementById("Suggestion").style.display = "none";
-    
+
+document.addEventListener("click", (e) => {
+    const todoDiv = e.target.closest(".todo");
+    if (todoDiv) {
+
+        document.getElementById("asideRight").style.display = "inline-block";
+        document.getElementById("todoDetails").style.display = "inline-block";
+        document.getElementById("Suggestion").style.display = "none";
+
+    }
 });
+
+
 document.getElementById("todoDetailsCloseBtn").addEventListener("click", () => {
     document.getElementById("asideRight").style.display = "none";
     document.getElementById("todoDetails").style.display = "none";
